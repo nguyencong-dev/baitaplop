@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí khảo thí điểm sinh viên OU </title>
+    <link href="img/icon.jpg" rel="shortcut icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/danhsachsinhvien.css">
+    <link rel="stylesheet" href="css/reponsive.css">
+    <script src="js\scripts_danhsachsinhvien.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="flex">
+        <ul>
+            <div class="users flex">
+                <img src="img/anonymous-person-icon-23.jpg" alt="user">
+                <ul>
+                    <li>Xin chào</li>
+                    <li>ABC</li>
+                </ul>
+            </div>
+            <h3>QUẢN LÍ CHỨC NĂNG</h3>
+            <div class="hiden_menu"><i class="fa-solid fa-bars"></i></div>
+            <li><a href="https://nguyencong-dev.github.io/web_page_1/"><i class="fa-solid fa-user"></i>Danh sách sinh
+                    viên</a></li>
+            <li><a href="#"><i class="fa-solid fa-list"></i>Danh sách lớp</a></li>
+            <li><a href="#"><i class="fa-solid fa-chalkboard-user"></i>Giáo viên</a></li>
+            <li><a href="https://nguyencong-dev.github.io/web_page_2/"><i class="fa-solid fa-chart-area"></i>Điểm</a>
+            </li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <!-- header -->
+        <header class="flex">
+            <div></div>
+            <div class="logo">
+                <img src="img/Logo.png" alt="logo open iniversity">
+            </div>
+            <div class="user">
+                <img src="img/anonymous-person-icon-23.jpg" alt="user">
+                <p>ABC</p>
+            </div>
+        </header>
+
+
+        <!-- CONTENT -->
+
+
+        <!-- OPTION -->
+        <section class="flex option">
+            <div></div>
+            <div>
+                <h1>Danh sách sinh viên</h1>
+                <button id="new_row"><i class="fa-regular fa-square-plus"></i></button>
+                <button id="refresh"><i class="fa-solid fa-retweet"></i></button>
+                <button id="sort"><i class="fa-solid fa-recycle"></i></button>
+            </div>
+            <div></div>
+            <div>
+                <input type="search" name="search" id="search" placeholder="Nhập tên sinh viên...">
+            </div>
+            <div></div>
+        </section>
+
+        <!-- DATA-->
+        <table class="table_data">
+            <thead>
+                <tr>
+                    <th>MSSV</th>
+                    <th>Họ tên</th>
+                    <th>Lớp</th>
+                    <th>Khoa</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Địa chỉ</th>
+                    <th>Niên khóa</th>
+                    <th>Tùy chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mssv">2351050015</td>
+                    <td class="hoten">Nguyễn Văn Công</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">18/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Thanh Hóa</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050010</td>
+                    <td class="hoten">Nguyễn Trường Bách</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">07/04/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Quảng Nam</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050013</td>
+                    <td class="hoten">Nguyễn Hoàng Nam</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">30/04/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Thanh Hóa</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050017</td>
+                    <td class="hoten">Lê Anh Đức</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">18/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Vĩnh Phúc</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050019</td>
+                    <td class="hoten">Nguyễn Văn Nam</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">10/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Hồ Chí Minh</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050035</td>
+                    <td class="hoten">Nguyễn Văn Trường</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">19/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Thanh Hóa</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050038</td>
+                    <td class="hoten">Trần Vũ Hoài Nam</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">14/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Hà Nội</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050022</td>
+                    <td class="hoten">Nguyễn Ngọc Duy</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">10/07/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Khánh Hòa</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050045</td>
+                    <td class="hoten">Nguyễn Văn Lương</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">23/05/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Sóc Trăng</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050036</td>
+                    <td class="hoten">Lê Thị Hương</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">13/07/2005</td>
+                    <td class="gioitinh">Nữ</td>
+                    <td class="diachi">Hồ Chí Minh</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050042</td>
+                    <td class="hoten">Nguyễn Văn Qúy</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">17/02/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Hồ Chí Minh</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050023</td>
+                    <td class="hoten">Lê Thị Chinh</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">12/10/2005</td>
+                    <td class="gioitinh">Nữ</td>
+                    <td class="diachi">Hồ Chí Minh</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050054</td>
+                    <td class="hoten">Lê Thị Hòa</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">25/09/2005</td>
+                    <td class="gioitinh">Nữ</td>
+                    <td class="diachi">Hồ Chí Minh</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050055</td>
+                    <td class="hoten">Nguyễn Văn Nam</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">17/04/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Đà Nẵng</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050027</td>
+                    <td class="hoten">Nguyễn Tiến Duy</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">28/02/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Long An</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050002</td>
+                    <td class="hoten">Nguyễn Văn Sơn</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">12/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Thanh Hóa</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050008</td>
+                    <td class="hoten">Nguyễn Ngọc Hoàng</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">15/10/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Hải Phòng</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050065</td>
+                    <td class="hoten">Nguyễn Ngọc Hà Anh</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">10/10/2005</td>
+                    <td class="gioitinh">Nữ</td>
+                    <td class="diachi">Thanh Hóa</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050052</td>
+                    <td class="hoten">Nguyễn Ngọc Đô</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">23/04/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Phú Yên</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mssv">2351050051</td>
+                    <td class="hoten">Huỳnh Văn Hoàng</td>
+                    <td class="lop">DH23IT01</td>
+                    <td class="khoa">CNTT</td>
+                    <td class="ngaysinh">14/09/2005</td>
+                    <td class="gioitinh">Nam</td>
+                    <td class="diachi">Hồ Chí Minh</td>
+                    <td class="nienkhoa">2023-2024</td>
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="cancel"><i class="fa-solid fa-ban"></i></button>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <div class="flex pages">
+            <div></div>
+            <div class="page">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+            </div>
+            <div></div>
+        </div>
+        <!-- footer -->
+        <footer class="flex">
+            <div>
+                <h3>Thông tin chung</h3>
+                <hr>
+                <ul class="school-info">
+                    <li><i class="fa-solid fa-location-dot"> </i> Địa chỉ: 35 – 37 Hồ Hảo Hớn, Phường Cô Giang, Quận 1,
+                        TP. HCM.</li>
+                    <li><i class="fa-solid fa-phone"> </i> Điện thoại: <span class="yellow">028-38364748</span>.</li>
+                    <li><i class="fa-solid fa-fax"> </i> Fax: <span class="yellow">028-39207639 hoặc
+                            028-39207640</span>.</li>
+                    <li><i class="fa-solid fa-envelope"> </i> E-mail: <span class="yellow">ou@ou.edu.vn</span>.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Liên hệ với chúng tôi</h3>
+                <hr>
+                <ul class="flex contact">
+                    <li><a href="https://www.facebook.com/TruongDaiHocMo"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/@HoChiMinhCityOpenUniversity/featured"><i
+                                class="fa-brands fa-google"></i></a></li>
+                    <li><a href="https://ou.edu.vn/"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="footer_light">
+            <h4>© 2024 TRƯỜNG ĐẠI HỌC MỞ TP HCM </h4>
+        </div>
+    </section>
+</body>
+
+</html>
