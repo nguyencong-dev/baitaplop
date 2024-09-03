@@ -1,0 +1,102 @@
+
+body{
+    position: relative;
+    width: 100%;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+.left{
+    display: block;
+    flex:0 0 50%;
+    height: 100vh;
+}
+.Lg{
+    position: relative;
+    margin: 30% 0 ;
+}
+.left > img{
+    width: 80%;
+    position: absolute;
+    display: none;
+}
+h1{
+    padding: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+    
+}
+.form-group input {
+    padding: 8px;
+    width: 80%;
+    background-color: ghostwhite;
+    border-radius: 10px ;
+}
+.login{
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    margin: 20px auto;
+    width: 50%;
+    padding: 10px 0px;
+    color: white;
+    background-color: #3251d9;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+.check {
+    justify-content: space-around;
+}
+.check a{
+    color: grey;
+    text-decoration: none ;
+}
+.right{
+    flex:0 0 50%;
+    background: url('../img/login_background.png') no-repeat ;
+    background-size: auto 100%;
+    position: relative; 
+}
+
+.contact{
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.contact a{
+    color: #3251d9;
+}
+.right >img{
+    width: 80%;
+    position: absolute;
+    display: block;
+}
+
+@media (max-width:690px) {
+    .right{
+        display: none;
+    }
+    .left{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background: url('../img/login_background.png') no-repeat ;
+        background-size: auto 100%;
+        position: absolute;
+        background-color: #3251d9;
+    }
+    .left > img{
+        width: 80%;
+        position: absolute;
+        display: block;
+    }
+}
