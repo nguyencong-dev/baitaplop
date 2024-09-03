@@ -9,7 +9,7 @@ window.addEventListener('load',function(){
         // Kiểm tra email và password
         if (email === 'abc@gmail.com' && password === 'Abc123') {
             alert('Đăng nhập thành công!');
-            window.location.href = 'https://www.facebook.com';  // Chuyển hướng đến Facebook
+            window.location.href = 'https://nguyencong-dev.github.io/baitaplop/danhsachsinhvien';  // Chuyển hướng đến Facebook
         } else {
             alert('Email hoặc mật khẩu không đúng!');
         }
