@@ -52,7 +52,7 @@ window.onload = function () {
         let currentText = cell.textContent;
         if (index === 5) {
           cell.innerHTML = `
-          <select>
+          <select style="width:100%">
             <option value="Nam" ${
               currentText === "Nam" ? "selected" : ""
             }>Nam</option>
@@ -61,8 +61,11 @@ window.onload = function () {
             }>Nữ</option>
           </select>
         `;
+        }
+        else if(index === 4){
+          cell.innerHTML =`<input style="width:100%" type="date" value="2000-01-01">`;
         } else {
-          cell.innerHTML = `<input type="text" value="${currentText}">`;
+          cell.innerHTML = `<input style="width:100%" type="text" value="${currentText}">`;
         }
         index++;
       }
@@ -92,6 +95,7 @@ window.onload = function () {
       row.querySelector(".delete").style.display = "inline";
       row.querySelector(".save").style.display = "none";
       row.querySelector(".cancel").style.display = "none";
+      alert("lưu thành công");
     };
   }
 
@@ -104,7 +108,9 @@ window.onload = function () {
       let index = 0;
       for (let cell of cells) {
         let input = cell.querySelector("input, select");
-        if (input) {
+        if (index === 5) {
+          cell.textContent = input.value;
+        } else {
           cell.textContent = input.defaultValue;
         }
         index++;
@@ -127,28 +133,28 @@ window.onload = function () {
     // Tạo và thêm các ô vào hàng mới với placeholder
     newRow.insertCell(
       0
-    ).innerHTML = `<input type="text" placeholder="MSSV mới">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="MSSV mới">`;
     newRow.insertCell(
       1
-    ).innerHTML = `<input type="text" placeholder="Họ tên mới">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Họ tên mới">`;
     newRow.insertCell(
       2
-    ).innerHTML = `<input type="text" placeholder="Lớp mới">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Lớp mới">`;
     newRow.insertCell(
       3
-    ).innerHTML = `<input type="text" placeholder="Khoa mới">`;
-    newRow.insertCell(4).innerHTML = `<input type="date" value="2000-01-01">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Khoa mới">`;
+    newRow.insertCell(4).innerHTML = `<input style="width:100%" type="date" value="2000-01-01">`;
     newRow.insertCell(5).innerHTML = `
-        <select>
+        <select style="width:100%">
             <option value="Nam">Nam</option>
             <option value="Nữ">Nữ</option>
         </select>`;
     newRow.insertCell(
       6
-    ).innerHTML = `<input type="text" placeholder="Địa chỉ mới">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Địa chỉ mới">`;
     newRow.insertCell(
       7
-    ).innerHTML = `<input type="text" placeholder="2023-2024">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="2023-2024">`;
 
     // Tạo các nút "Edit", "Delete", "Save", và "Cancel"
     newRow.insertCell(8).innerHTML = `
@@ -159,7 +165,6 @@ window.onload = function () {
     `;
 
     // Gán sự kiện cho các nút "Edit"
-    let editButtons = document.getElementsByClassName("edit");
     for (let ed of editButtons) {
       ed.onclick = function () {
         let row = ed.closest("tr");
@@ -170,7 +175,7 @@ window.onload = function () {
           let currentText = cell.textContent;
           if (index === 5) {
             cell.innerHTML = `
-          <select>
+          <select style="width:100%">
             <option value="Nam" ${
               currentText === "Nam" ? "selected" : ""
             }>Nam</option>
@@ -179,8 +184,11 @@ window.onload = function () {
             }>Nữ</option>
           </select>
         `;
+          }
+          else if(index === 4){
+            cell.innerHTML =`<input style="width:100%" type="date" value="2000-01-01">`;
           } else {
-            cell.innerHTML = `<input type="text" value="${currentText}">`;
+            cell.innerHTML = `<input style="width:100%" type="text" value="${currentText}">`;
           }
           index++;
         }
@@ -192,17 +200,17 @@ window.onload = function () {
     }
 
     // Gán sự kiện cho các nút "Delete"
-    let del = document.getElementsByClassName("delete");
     for (let d of del) {
       d.onclick = function () {
-        let row = d.closest("tr");
-        if (row) {
-          row.parentNode.removeChild(row);
+        if (confirm("Bạn có chắc chắn muốn xóa sinh viên này?")) {
+          let row = d.closest("tr");
+          if (row) {
+            row.parentNode.removeChild(row);
+          }
         }
       };
     }
     // Gán sự kiện cho các nút "Save"
-    let saveButtons = document.getElementsByClassName("save");
     for (let sav of saveButtons) {
       sav.onclick = function () {
         let row = sav.closest("tr");
@@ -220,11 +228,11 @@ window.onload = function () {
         row.querySelector(".delete").style.display = "inline";
         row.querySelector(".save").style.display = "none";
         row.querySelector(".cancel").style.display = "none";
+        alert("lưu thành công");
       };
     }
 
     // Gán sự kiện cho các nút "Cancel"
-    let cancelButtons = document.getElementsByClassName("cancel");
     for (let can of cancelButtons) {
       can.onclick = function () {
         let row = can.closest("tr");
@@ -232,7 +240,9 @@ window.onload = function () {
         let index = 0;
         for (let cell of cells) {
           let input = cell.querySelector("input, select");
-          if (input) {
+          if (index === 5) {
+            cell.textContent = input.value;
+          } else {
             cell.textContent = input.defaultValue;
           }
           index++;
@@ -244,26 +254,34 @@ window.onload = function () {
       };
     }
   };
-  // refresh
-  let ref = document.getElementById("refresh");
-  ref.onclick = function(){
-    location.reload();
-  }
-  // sort
-  let sortButton = document.getElementById("sort")
-  sortButton.onclick = function(){
-    let table = document.querySelector(".table_data");
-    let tbody = table.querySelector("tbody");
-    let rows = Array.from(tbody.rows);
-    let columnIndex = 1;
-    let sortedRows = rows.sort((a, b) => {
-        let lastWordA = a.cells[columnIndex].innerText.trim().split(" ").pop().toLowerCase();
-        let lastWordB = b.cells[columnIndex].innerText.trim().split(" ").pop().toLowerCase();
-        return lastWordA.localeCompare(lastWordB);
-    });
+   // refresh
+   let ref = document.getElementById("refresh");
+   ref.onclick = function () {
+     location.reload();
+   };
+   // sort
+   let sortButton = document.getElementById("sort");
+   sortButton.onclick = function () {
+     let table = document.querySelector(".table_data");
+     let tbody = table.querySelector("tbody");
+     let rows = Array.from(tbody.rows);
+     let columnIndex = 1;
+     let sortedRows = rows.sort((a, b) => {
+       let lastWordA = a.cells[columnIndex].innerText
+         .trim()
+         .split(" ")
+         .pop()
+         .toLowerCase();
+       let lastWordB = b.cells[columnIndex].innerText
+         .trim()
+         .split(" ")
+         .pop()
+         .toLowerCase();
+       return lastWordA.localeCompare(lastWordB);
+     });
 
-    tbody.innerHTML = "";
+     tbody.innerHTML = "";
 
-    sortedRows.forEach(row => tbody.appendChild(row));
-  }
+     sortedRows.forEach((row) => tbody.appendChild(row));
+   };
 };

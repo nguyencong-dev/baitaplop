@@ -50,13 +50,12 @@ window.onload = function () {
 
       cells.forEach((cell, index) => {
         let currentValue = cell.textContent;
+        if(index === 3 || index === 5 || index === 6 ||index ===7)
         cell.innerHTML = `<input style="width:100%" type="text" value="${currentValue}">`;
       });
-
-      // Hiển thị và ẩn các nút cần thiết
       row.querySelector(".save").style.display = "inline";
       row.querySelector(".cancel").style.display = "inline";
-      ed.style.display = "none";
+      row.querySelector(".edit").style.display = "none";
       row.querySelector(".delete").style.display = "none";
     };
   }
@@ -80,6 +79,7 @@ window.onload = function () {
       row.querySelector(".delete").style.display = "inline";
       row.querySelector(".save").style.display = "none";
       row.querySelector(".cancel").style.display = "none";
+      alert("Lưu thành công")
     };
   }
 
@@ -115,28 +115,24 @@ window.onload = function () {
     // Tạo và thêm các ô vào hàng mới với placeholder
     newRow.insertCell(
       0
-    ).innerHTML = `<input type="text" placeholder="MSSV mới">`;
+    ).innerHTML = "2351050016";
     newRow.insertCell(
       1
-    ).innerHTML = `<input type="text" placeholder="Họ tên mới">`;
+    ).innerHTML = "Nguyễn Văn Công";
     newRow.insertCell(
       2
-    ).innerHTML = `<input type="text" placeholder="Lớp mới">`;
+    ).innerHTML = "DH23IT01";
     newRow.insertCell(
       3
-    ).innerHTML = `<input type="text" placeholder="Khoa mới">`;
-    newRow.insertCell(4).innerHTML = `<input type="date" value="2000-01-01">`;
-    newRow.insertCell(5).innerHTML = `
-        <select>
-            <option value="Nam">Nam</option>
-            <option value="Nữ">Nữ</option>
-        </select>`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Tên môn học">`;
+    newRow.insertCell(4).innerHTML = "Học kì 2";
+    newRow.insertCell(5).innerHTML = `<input style="width:100%" type="text" placeholder="Điểm quá trình">`;
     newRow.insertCell(
       6
-    ).innerHTML = `<input type="text" placeholder="Địa chỉ mới">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Điểm cuối kì">`;
     newRow.insertCell(
       7
-    ).innerHTML = `<input type="text" placeholder="2023-2024">`;
+    ).innerHTML = `<input style="width:100%" type="text" placeholder="Trung bình">`;
 
     // Tạo các nút "Edit", "Delete", "Save", và "Cancel"
     newRow.insertCell(8).innerHTML = `
@@ -147,40 +143,26 @@ window.onload = function () {
     `;
 
     // Gán sự kiện cho các nút "Edit"
-    let editButtons = document.getElementsByClassName("edit");
     for (let ed of editButtons) {
       ed.onclick = function () {
         let row = ed.closest("tr");
         let cells = row.querySelectorAll("td:not(:last-child)");
-        let index = 0;
-
-        for (let cell of cells) {
-          let currentText = cell.textContent;
-          if (index === 5) {
-            cell.innerHTML = `
-          <select>
-            <option value="Nam" ${
-              currentText === "Nam" ? "selected" : ""
-            }>Nam</option>
-            <option value="Nữ" ${
-              currentText === "Nữ" ? "selected" : ""
-            }>Nữ</option>
-          </select>
-        `;
-          } else {
-            cell.innerHTML = `<input type="text" value="${currentText}">`;
-          }
-          index++;
-        }
-        row.querySelector(".edit").style.display = "none";
-        row.querySelector(".delete").style.display = "none";
+  
+        cells.forEach((cell, index) => {
+          let currentValue = cell.textContent;
+          if(index === 3 || index === 5 || index === 6 ||index ===7)
+          cell.innerHTML = `<input style="width:100%" type="text" value="${currentValue}">`;
+        });
+  
+        // Hiển thị và ẩn các nút cần thiết
         row.querySelector(".save").style.display = "inline";
         row.querySelector(".cancel").style.display = "inline";
+        ed.style.display = "none";
+        row.querySelector(".delete").style.display = "none";
       };
     }
 
     // Gán sự kiện cho các nút "Delete"
-    let del = document.getElementsByClassName("delete");
     for (let d of del) {
       d.onclick = function () {
         if (confirm("Bạn có chắc chắn muốn xóa điểm môn này không?")) {
@@ -192,7 +174,6 @@ window.onload = function () {
       };
     }
     // Gán sự kiện cho các nút "Save"
-    let saveButtons = document.getElementsByClassName("save");
     for (let sav of saveButtons) {
       sav.onclick = function () {
         let row = sav.closest("tr");
@@ -210,11 +191,11 @@ window.onload = function () {
         row.querySelector(".delete").style.display = "inline";
         row.querySelector(".save").style.display = "none";
         row.querySelector(".cancel").style.display = "none";
+        alert("Lưu thành công")
       };
     }
 
     // Gán sự kiện cho các nút "Cancel"
-    let cancelButtons = document.getElementsByClassName("cancel");
     for (let can of cancelButtons) {
       can.onclick = function () {
         let row = can.closest("tr");
@@ -254,5 +235,4 @@ window.onload = function () {
     tbody.innerHTML = "";
     sortedRows.forEach((row) => tbody.appendChild(row));
   };
-  
 };
