@@ -66,14 +66,12 @@ window.onload = function () {
     sav.onclick = function () {
       let row = sav.closest("tr");
       let cells = row.querySelectorAll("td:not(:last-child)");
-      let index = 0;
       for (let cell of cells) {
         let currentText = cell.textContent;
         let input = cell.querySelector("input, select");
         if (input) {
           cell.textContent = input.value;
         }
-        index++;
       }
       row.querySelector(".edit").style.display = "inline";
       row.querySelector(".delete").style.display = "inline";
@@ -178,14 +176,12 @@ window.onload = function () {
       sav.onclick = function () {
         let row = sav.closest("tr");
         let cells = row.querySelectorAll("td:not(:last-child)");
-        let index = 0;
         for (let cell of cells) {
           let currentText = cell.textContent;
           let input = cell.querySelector("input, select");
           if (input) {
             cell.textContent = input.value;
           }
-          index++;
         }
         row.querySelector(".edit").style.display = "inline";
         row.querySelector(".delete").style.display = "inline";
